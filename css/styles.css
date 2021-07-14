@@ -3,6 +3,7 @@
     /* третий цвет (белый) #ffffff */
     /* цвет логотипа #000000 */
     /* акцент active #2196f3 */
+    /* active hero-button #188ce8 */
     /* фон страницы #ffffff */
     /* вторичный фон #f5f4fa */
     /* фон подвала #2f303a */
@@ -14,6 +15,7 @@
     --third-color: #ffffff;
     --logo-color: #000000;
     --accent-color: #2196f3;
+    --accent-hero-button: #188ce8;
     --primary-bg-color: #ffffff;
     --secondary-bg-color: #f5f4fa;
     --footer-bg-color: #2f303a;
@@ -74,6 +76,11 @@ button {
 .contacts a:hover, .contacts a:focus {
     color: var(--accent-color);
 }
+
+.navigation a.current {
+    color: var(--accent-color);
+}
+
 /* Герой */
 .hero {
     background-color: var(--footer-bg-color);
@@ -100,7 +107,7 @@ button {
 }
 
 .hero-button:hover, .hero-button:focus {
-    /* в макете нет информации о смене цвета */
+    background-color: var(--accent-hero-button);
 }
 
 /* Особенности */
