@@ -10,6 +10,8 @@
     --secondary-bg-color: #f5f4fa;              /* вторичный фон #f5f4fa */
     --footer-bg-color: #2f303a;                 /* фон подвала #2f303a */
     --footer-link: rgba(255, 255, 255, 0.6);    /* ссылки подвала rgba(255, 255, 255, 0.6) */
+    --card-set-gap: 30px;                         /* Отступы между карточками в Портфолио */
+      
 }
 
 html {
@@ -48,6 +50,12 @@ button {
     margin: 0 auto;
 }
 
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
 /* Логотип */
 .logo {
     color: var(--logo-color);
@@ -63,13 +71,29 @@ button {
 
 /* Навигация */
 .navigation, .contacts {
+    display: flex;
+}
+
+.navigation, .contacts {
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
 }
 
+.navigation li:not(:last-child) {
+    margin-right: 50px;
+}
+
+.contacts li:not(:last-child) {
+    margin-right: 50px;
+}
+
 .navigation a{
+    display: inline-block;
+    padding-top: 32px;
+    padding-bottom: 32px;
+
     color: var(--primary-text-color);
     text-decoration: none;
 }
@@ -229,7 +253,6 @@ button {
     color: var(--accent-color);
 }
 
-
 /* ПОРТФОЛИО */
 
 /* Фильтры */
@@ -251,12 +274,53 @@ button {
     color: var(--third-color);
 }
 
+/* Контейнер Портфолио */
+.portfolio-container {
+    width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 94px;
+}
+
+.project-content {
+    border-right: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+    border-left: 1px solid #eeeeee;
+    padding: 20px 24px;
+}
+
+/* Список карточек */
+.projects {
+    padding: 0;
+    margin: 0;
+   
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(-1 * var(--card-set-gap));
+    margin-top: calc(-1 * var(--card-set-gap));
+}
+
+.projects > .item {
+    flex-basis: calc(100% / 3 - var(--card-set-gap));
+    margin-left: var(--card-set-gap);
+    margin-top: var(--card-set-gap);
+}
+
+.item {
+    overflow: hidden;
+}
+
 /* Проекты */
 .projects a {
+    display: block;
     text-decoration: none;
 }
 
 .project-title {
+    margin-top: 0;
     margin-bottom: 4px;
 
     color: var(--primary-text-color);
@@ -266,7 +330,11 @@ button {
 }
 
 .project-type {
+    margin: 0;
     color: var(--secondary-text-color);
     font-size: 16px;
     line-height: 1.87;
 }
+
+
+
