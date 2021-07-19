@@ -10,8 +10,10 @@
     --secondary-bg-color: #f5f4fa;              /* вторичный фон #f5f4fa */
     --footer-bg-color: #2f303a;                 /* фон подвала #2f303a */
     --footer-link: rgba(255, 255, 255, 0.6);    /* ссылки подвала rgba(255, 255, 255, 0.6) */
-    --card-set-gap: 30px;                         /* Отступы между карточками в Портфолио */
-      
+
+    --header-border: #ececec;                   /* нижняя рамка шапки сайта */
+    --portfolio-border: #eeeeee;                /* рамка в карточках на странице Портфолио */
+    --card-set-gap: 30px;                         /* Отступы между карточками в Портфолио */    
 }
 
 html {
@@ -46,15 +48,16 @@ button {
 
 .container {
     width: 1200px;
-    padding: 0 15px;
-    margin: 0 auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 img {
     display: block;
-    max-width: 100%;
     height: auto;
-  }
+}
 
 /* Логотип */
 .logo {
@@ -69,27 +72,47 @@ img {
     color: var(--accent-color);
 }
 
+.logo.link {
+    display: flex;
+    align-items: center;
+    margin-right: 93px;
+}
+
 /* Навигация */
-.navigation, .contacts {
+.header {
+    border-bottom: 1px solid var(--header-border);
+}
+
+.header.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigation, .nav-list, .contacts {
     display: flex;
 }
 
-.navigation, .contacts {
+.contacts {
+    margin-left: auto;
+    align-items: center;
+}
+
+.nav-list, .contacts {
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
 }
 
-.navigation li:not(:last-child) {
+.nav-list .item:not(:last-child) {
     margin-right: 50px;
 }
 
-.contacts li:not(:last-child) {
+.contacts .item:not(:last-child) {
     margin-right: 50px;
 }
 
-.navigation a{
+.nav-list a{
     display: inline-block;
     padding-top: 32px;
     padding-bottom: 32px;
@@ -98,11 +121,16 @@ img {
     text-decoration: none;
 }
 
-.navigation a:hover, .navigation a:focus {
+.nav-list a:hover, .nav-list a:focus {
+    color: var(--accent-color);
+}
+
+.nav-list a.current {
     color: var(--accent-color);
 }
 
 .contacts a {
+    display: inline-block;
     color: var(--secondary-text-color);
     text-decoration: none;
 }
@@ -111,9 +139,6 @@ img {
     color: var(--accent-color);
 }
 
-.navigation a.current {
-    color: var(--accent-color);
-}
 
 /* Герой */
 .hero {
@@ -152,8 +177,9 @@ img {
 }
 
 /* Секции */
-.features, .what-we-do, .team-section {
-    margin-top: 94px;
+.section {
+    padding-top: 94px;
+    padding-bottom: 94px;
 }
 
 /* Особенности */
@@ -166,6 +192,21 @@ img {
     text-align: center;
 }
 
+.features .section-title {
+    display: none;
+}
+
+.section-feature {
+    display: flex;
+}
+
+.section-feature .item {
+    width: 270px;
+}
+
+.section-feature .item:not(:last-child) {
+    margin-right: 30px;
+}
 .feature {
     margin-top: 0;
     margin-bottom: 10px;
@@ -178,21 +219,42 @@ img {
 .section-feature p {
     margin-top: 0;
     margin-bottom: 0;
+    padding-bottom: 5px;
 
     color: var(--secondary-text-color);
     font-size: 14px;
     line-height: 1.71;
 }
 
+/* Чем мы занимаемся */
+
+.what-we-do .list {
+    display: flex;
+}
+
+.what-we-do .item:not(:last-child) {
+    margin-right: 30px;
+}
+
 /* Наша команда */
-.team-section {
-    padding-top: 94px;
-    padding-bottom: 94px;
+.team.section {
     background-color: var(--secondary-bg-color);
 }
 
+.team .list {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.team-content {
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    background-color: var(--primary-bg-color);
+}
 .team-title {
-    margin-top: 30px;
+    margin-top: 0;
+    padding-top: 30px;
     margin-bottom: 10px;
 
     font-weight: 500;
@@ -201,6 +263,10 @@ img {
 }
 
 .team-position {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 30px;
+
     color: var(--secondary-text-color);
     font-size: 16px;
     line-height: 1.19;
@@ -208,11 +274,15 @@ img {
 
 /* Подвал сайта */
 .footer {
-    padding-top: 60px;
-    padding-bottom: 60px;
     background-color: var(--footer-bg-color);
 }
-.footer .logo {
+
+.footer .container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.logo.inverse {
     display: inline-block;
     padding: 0;
     margin-bottom: 20px;
@@ -221,6 +291,7 @@ img {
 }
 
 .address {
+    display: block;
     font-style: normal;
 }
 
@@ -238,12 +309,18 @@ img {
     line-height: 1.71;
 }
 
+.footer-contacts .item {
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 .mail {
     margin-bottom: 9px;  
 }
 
 .footer-contacts a {
-    display: inline-block;
+    display: block;
     
     color: var(--footer-link);
     text-decoration: none;
@@ -256,6 +333,21 @@ img {
 /* ПОРТФОЛИО */
 
 /* Фильтры */
+
+.portfolio-title {
+    display: none;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.filters li:not(:last-child) {
+    margin-right: 8px;
+}
+
 .filters button {
     display: inline-block;
     border: 0;
@@ -274,29 +366,16 @@ img {
     color: var(--third-color);
 }
 
-/* Контейнер Портфолио */
-.portfolio-container {
-    width: 1200px;
-    padding-left: 15px;
-    padding-right: 15px;
 
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 94px;
-}
-
+/* Сетка карточек */
 .project-content {
-    border-right: 1px solid #eeeeee;
-    border-bottom: 1px solid #eeeeee;
-    border-left: 1px solid #eeeeee;
+    border-right: 1px solid var(--portfolio-border);
+    border-bottom: 1px solid var(--portfolio-border);
+    border-left: 1px solid var(--portfolio-border);
     padding: 20px 24px;
 }
 
-/* Список карточек */
 .projects {
-    padding: 0;
-    margin: 0;
-   
     display: flex;
     flex-wrap: wrap;
     margin-left: calc(-1 * var(--card-set-gap));
@@ -304,7 +383,7 @@ img {
 }
 
 .projects > .item {
-    flex-basis: calc(100% / 3 - var(--card-set-gap));
+    flex-basis: calc((100% - 3 * var(--card-set-gap)) / 3);
     margin-left: var(--card-set-gap);
     margin-top: var(--card-set-gap);
 }
