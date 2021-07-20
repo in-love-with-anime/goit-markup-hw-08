@@ -129,7 +129,7 @@ img {
 .nav-list a {
     display: inline-block;
     padding-top: 32px;
-    padding-bottom: 31px;
+    padding-bottom: 32px;
 
     color: var(--primary-text-color);
     text-decoration: none;
