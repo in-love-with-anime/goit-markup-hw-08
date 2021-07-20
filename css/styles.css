@@ -156,7 +156,13 @@ img {
 /* Герой */
 .hero {
     background-color: var(--footer-bg-color);
+}
+
+.hero-content {
+    width: 696px;
     text-align: center;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .hero-title {
