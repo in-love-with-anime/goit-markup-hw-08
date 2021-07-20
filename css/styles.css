@@ -93,7 +93,7 @@ img {
 }
 
 /* Навигация */
-.header {
+.header-border {
     border-bottom: 1px solid var(--header-border);
 }
 
@@ -129,7 +129,7 @@ img {
 .nav-list a {
     display: inline-block;
     padding-top: 32px;
-    padding-bottom: 32px;
+    padding-bottom: 31px;
 
     color: var(--primary-text-color);
     text-decoration: none;
@@ -160,15 +160,17 @@ img {
 }
 
 .hero-content {
-    width: 696px;
+    padding-top: 200px;
+    padding-bottom: 200px;
     text-align: center;
-    margin-right: auto;
-    margin-left: auto;
 }
 
 .hero-title {
+    max-width: 696px;
     margin-top: 0;
-    margin-bottom: 30px;
+    margin-bottom: 30px; 
+    margin-right: auto;
+    margin-left: auto;
 
     color: var(--third-color);
     font-weight: 900;
@@ -203,6 +205,10 @@ img {
 }
 
 /* Особенности */
+.features.section {
+    padding-bottom: 0;
+}
+
 .section-title {
     margin-top: 0;
     margin-bottom: 50px;
@@ -235,7 +241,6 @@ img {
 .section-feature p {
     margin-top: 0;
     margin-bottom: 0;
-    padding-bottom: 5px;
 
     color: var(--secondary-text-color);
     font-size: 14px;
@@ -252,6 +257,10 @@ img {
     margin-right: 30px;
 }
 
+.what-we-do img {
+    width: 370px;
+}
+
 /* Наша команда */
 .team.section {
     background-color: var(--secondary-bg-color);
@@ -259,12 +268,19 @@ img {
 
 .team .list {
     display: flex;
-    justify-content: space-between;
     text-align: center;
 }
 
+.team .item:not(:last-child) {
+    margin-right: 30px;
+}
+
+.team img {
+    width: 270px;
+}
+
 .team-content {
-    padding: 30px 60px;
+    padding: 30px 20px;
     border-bottom-right-radius: 4px;
     border-bottom-left-radius: 4px;
     background-color: var(--primary-bg-color);
@@ -324,7 +340,7 @@ img {
     line-height: 1.71;
 }
  
-.mail {
+.item.mail {
     margin-bottom: 9px;  
 }
 
@@ -346,7 +362,7 @@ img {
 .filters {
     display: flex;
     justify-content: center;
-    margin-bottom: 50px;
+    padding-bottom: 50px;
 }
 
 .filters li:not(:last-child) {
@@ -398,6 +414,11 @@ img {
 }
 
 /* Проекты */
+
+.portfolio img {
+    width: 370px;
+}
+
 .projects a {
     display: block;
     text-decoration: none;
