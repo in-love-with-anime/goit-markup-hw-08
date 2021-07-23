@@ -156,9 +156,15 @@ img {
 
 /* Герой */
 .hero {
+    width: 1600px;
+    margin-right: auto;
+    margin-left: auto;
     padding-top: 200px;
     padding-bottom: 200px;
+
     background-color: var(--footer-bg-color);
+    background-image: url('../images/background.jpg');
+    
 }
 
 .hero-content {
