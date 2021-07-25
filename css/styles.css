@@ -146,7 +146,9 @@ img {
 }
 
 .contacts a {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    
     color: var(--secondary-text-color);
     text-decoration: none;
 }
@@ -155,14 +157,9 @@ img {
     color: var(--accent-color);
 }
 
-.contacts a {
-    display: flex;
-    align-items: center; 
-}
-
 .icon-mail {
     margin-right: 10px;
-    fill: var(--secondary-text-color);
+    fill: currentcolor;
 }
 
 .icon-mail:hover, .icon-mail:focus {
@@ -171,7 +168,7 @@ img {
 
 .icon-phone {
     margin-right: 10px;
-    fill: var(--secondary-text-color);
+    fill: currentcolor;
 }
 
 .icon-phone:hover, .icon-mail:focus {
