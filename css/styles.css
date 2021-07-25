@@ -414,12 +414,15 @@ img {
 }
 
 .footer .container {
+    display: flex;
+    align-items: baseline;
     padding-top: 60px;
     padding-bottom: 60px;
 }
 
 .address-content {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     width: 231px;
     margin-right: 70px;
 }
@@ -433,6 +436,9 @@ img {
 }
 
 .address {
+    display: flex;
+    flex-direction: column;
+
     font-style: normal;
 }
 
@@ -446,6 +452,9 @@ img {
 }
 
 .footer-contacts {
+    display: flex;
+    flex-direction: column;
+
     font-size: 14px;
     line-height: 1.71;
 }
@@ -468,6 +477,7 @@ img {
 /* Ссылки на соцсете в футере */
 .social-links {
     display: flex;
+    flex-direction: column;
     
 }
 
