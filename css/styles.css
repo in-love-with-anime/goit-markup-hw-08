@@ -1,19 +1,21 @@
   
 :root {
-    --primary-text-color: #212121;              /* цвет основного текста #212121 */
-    --secondary-text-color: #757575;            /* вторичный цвет #757575 */
-    --third-color: #ffffff;                     /* третий цвет (белый) #ffffff */
-    --logo-color: #000000;                      /* цвет логотипа #000000 */
-    --accent-color: #2196f3;                    /* акцент active #2196f3 */
-    --accent-hero-button: #188ce8;              /* active hero-button #188ce8 */
-    --primary-bg-color: #ffffff;                /* фон страницы #ffffff */
-    --secondary-bg-color: #f5f4fa;              /* вторичный фон #f5f4fa */
-    --footer-bg-color: #2f303a;                 /* фон подвала #2f303a */
-    --footer-link: rgba(255, 255, 255, 0.6);    /* ссылки подвала rgba(255, 255, 255, 0.6) */
-
-    --header-border: #ececec;                   /* нижняя рамка шапки сайта */
-    --portfolio-border: #eeeeee;                /* рамка в карточках на странице Портфолио */
-    --card-set-gap: 30px;                         /* Отступы между карточками в Портфолио */    
+    --primary-text-color: #212121;                /* цвет основного текста #212121 */
+    --secondary-text-color: #757575;              /* вторичный цвет #757575 */
+    --third-color: #ffffff;                       /* третий цвет (белый) #ffffff */
+    --logo-color: #000000;                        /* цвет логотипа #000000 */
+    --accent-color: #2196f3;                      /* акцент active #2196f3 */
+    --accent-hero-button: #188ce8;                /* active hero-button #188ce8 */
+    --primary-bg-color: #ffffff;                  /* фон страницы #ffffff */
+    --secondary-bg-color: #f5f4fa;                /* вторичный фон #f5f4fa */
+    --footer-bg-color: #2f303a;                   /* фон подвала #2f303a */
+    --footer-link: rgba(255, 255, 255, 0.6);      /* ссылки подвала rgba(255, 255, 255, 0.6) */
+    --icons-color: rgba(175, 177, 184, 1);        /* цвет иконок в секции наша команда */
+   
+    --header-border: #ececec;                     /* нижняя рамка шапки сайта */
+    --regular-clients-border: rgba(175, 177, 184, 1); /*рамка "Постоянные клиенты" */
+    --portfolio-border: #eeeeee;                  /* рамка в карточках на странице Портфолио */
+    --card-set-gap: 30px;                           /* Отступы между карточками в Портфолио */    
 }
 
 html {
@@ -153,18 +155,43 @@ img {
     color: var(--accent-color);
 }
 
+.contacts a {
+    display: flex;
+    align-items: center; 
+}
+
+.icon-mail {
+    margin-right: 10px;
+    fill: var(--secondary-text-color);
+}
+
+.icon-mail:hover, .icon-mail:focus {
+    fill: var(--accent-color);
+}
+
+.icon-phone {
+    margin-right: 10px;
+    fill: var(--secondary-text-color);
+}
+
+.icon-phone:hover, .icon-mail:focus {
+    fill: var(--accent-color);
+}
 
 /* Герой */
 .hero {
-    width: 1600px;
+    max-width: 1600px;
+    height: 600px;
     margin-right: auto;
     margin-left: auto;
     padding-top: 200px;
     padding-bottom: 200px;
 
     background-color: var(--footer-bg-color);
-    background-image: url('../images/background.jpg');
-    
+    background-image: linear-gradient(
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)),
+    url('../images/background.jpg');  
 }
 
 .hero-content {
@@ -190,7 +217,7 @@ img {
     display: inline-block;
     border: 0;
     border-radius: 4px;
-    padding: 10px 22px; 
+    padding: 10px 32px; 
 
     color: var(--third-color);
     background-color: var(--accent-color);
@@ -235,9 +262,11 @@ img {
 .section-feature .item:not(:last-child) {
     margin-right: 30px;
 }
+
 .feature {
     margin-top: 0;
     margin-bottom: 10px;
+    padding-top: 30px;
 
     font-size: 14px;
     line-height: 1.14;
@@ -253,6 +282,18 @@ img {
     line-height: 1.71;
 }
 
+.button-feature {
+    padding: 0;
+    border: none;
+    width: 270px;
+    height: 120px;
+
+    background-color: var(--secondary-bg-color);
+
+    border-radius: 4px;
+    cursor: default;
+}
+
 /* Чем мы занимаемся */
 
 .what-we-do .list {
@@ -264,10 +305,6 @@ img {
 }
 
 .what-we-do .item {
-    width: 370px;
-}
-
-.what-we-do img {
     width: 370px;
 }
 
@@ -287,18 +324,18 @@ img {
 
 .team .item {
     width: 270px;
-}
-
-.team img {
-    width: 270px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+                0px 1px 1px rgba(0, 0, 0, 0.14),
+                0px 2px 1px rgba(0, 0, 0, 0.2);             
 }
 
 .team-content {
-    padding: 30px 20px;
-    border-bottom-right-radius: 4px;
-    border-bottom-left-radius: 4px;
+    padding: 30px 20px 16px;
     background-color: var(--primary-bg-color);
 }
+
 .team-title {
     margin-top: 0;
     margin-bottom: 10px;
@@ -317,6 +354,63 @@ img {
     line-height: 1.19;
 }
 
+/* Ссылки соцсетей */
+
+.team-social {
+    padding: 0 32px 30px;
+    background-color: var(--primary-bg-color);
+}
+
+.team-social li:not(:last-child) {
+    margin-right: 10px;
+}
+
+.team-social .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+     
+    fill: var(--icons-color);
+    background-color: var(--primary-bg-color);
+    border-radius: 50%;
+}
+
+.team-social .link:hover, .team-social .link:focus {
+    fill: var(--third-color);
+    background-color: var(--accent-color);
+}
+
+/* Постоянные клиенты */
+.regular-clients-list {
+    display: flex;
+}
+
+.regular-clients-item:not(:last-child) {
+    margin-right: 30px;
+}
+
+.regular-clients-item .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 170px;
+    height: 92px;
+    
+    fill: var(--icons-color);
+    background-color: var(--primary-bg-color);
+
+    cursor: pointer;
+    border: 1px solid var(--regular-clients-border);
+    border-radius: 4px;
+}
+
+.regular-clients-item .link:hover, .regular-clients-item .link:focus {
+    fill: var(--accent-color);
+    border-color: var(--accent-color);
+}
 /* Подвал сайта */
 .footer {
     background-color: var(--footer-bg-color);
@@ -325,6 +419,12 @@ img {
 .footer .container {
     padding-top: 60px;
     padding-bottom: 60px;
+}
+
+.address-content {
+    display: inline-block;
+    width: 231px;
+    margin-right: 70px;
 }
 
 .logo.inverse {
@@ -336,7 +436,6 @@ img {
 }
 
 .address {
-    display: block;
     font-style: normal;
 }
 
@@ -369,6 +468,51 @@ img {
     color: var(--accent-color);
 }
 
+/* Ссылки на соцсете в футере */
+.social-links {
+    display: flex;
+    
+}
+
+.join {
+    display: block;
+    margin-bottom: 20px;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.17;
+    text-transform: uppercase;
+
+    color: var(--third-color);
+}
+
+.social.list {
+    display: flex;
+    padding: 0;
+    margin: 0;    
+}
+
+.social .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+     
+    fill: var(--third-color);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.social .link:hover, .social .link:focus {
+    background-color: var(--accent-color);
+}
+
+.social li:not(:last-child) {
+    margin-right: 10px;
+}
+
+
 /* ПОРТФОЛИО */
 
 /* Фильтры */
@@ -399,16 +543,13 @@ img {
 .filters button:hover, .filters button:focus {
     background-color: var(--accent-color);
     color: var(--third-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+                0px 1px 2px rgba(0, 0, 0, 0.08),
+                0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 
 /* Сетка карточек */
-.project-content {
-    border-right: 1px solid var(--portfolio-border);
-    border-bottom: 1px solid var(--portfolio-border);
-    border-left: 1px solid var(--portfolio-border);
-    padding: 20px 24px;
-}
 
 .projects {
     display: flex;
@@ -427,6 +568,13 @@ img {
     overflow: hidden;
 }
 
+.projects .item:hover, .projects .item:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+                0px 4px 4px rgba(0, 0, 0, 0.06),
+                1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+
 /* Проекты */
 
 .portfolio img {
@@ -437,6 +585,14 @@ img {
     display: block;
     text-decoration: none;
 }
+
+.project-content {
+    border-right: 1px solid var(--portfolio-border);
+    border-bottom: 1px solid var(--portfolio-border);
+    border-left: 1px solid var(--portfolio-border);
+    padding: 20px 24px;
+}
+
 
 .project-title {
     margin-top: 0;
@@ -454,6 +610,3 @@ img {
     font-size: 16px;
     line-height: 1.87;
 }
-
-
-
