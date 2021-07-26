@@ -212,8 +212,6 @@ img {
  
 .hero-button {  
     display: inline-block;
-    border: 0;
-    border-radius: 4px;
     padding: 10px 32px; 
 
     color: var(--third-color);
@@ -222,10 +220,14 @@ img {
     font-size: 16px;
     line-height: 1.86;
     letter-spacing: 0.06em;
+
+    border: 0;
+    border-radius: 4px;
 }
 
 .hero-button:hover, .hero-button:focus {
     background-color: var(--accent-hero-button);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 /* Секции */
@@ -279,16 +281,22 @@ img {
     line-height: 1.71;
 }
 
-.button-feature {
-    padding: 0;
-    border: none;
+.thumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 270px;
     height: 120px;
 
     background-color: var(--secondary-bg-color);
+    border-radius: 4px; 
+}
 
-    border-radius: 4px;
-    cursor: default;
+.feature-icon {
+    padding: 0;
+    width: 70px;
+    height: 70px;
+    border: none;
 }
 
 /* Чем мы занимаемся */
@@ -296,7 +304,7 @@ img {
 .what-we-do .list {
     display: flex;
 }
-
+  
 .what-we-do .item:not(:last-child) {
     margin-right: 30px;
 }
