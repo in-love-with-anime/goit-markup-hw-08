@@ -573,11 +573,6 @@ img {
     margin-top: var(--card-set-gap);
 }
 
-.item {
-    overflow: hidden;
-}
-
-
 /* Проекты */
 
 .portfolio img {
