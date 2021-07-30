@@ -59,7 +59,7 @@
             
             <div class="hero-content container">
                 <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-                <button class="hero-button">Заказать услугу</button>
+                <button class="hero-button" data-modal-open>Заказать услугу</button>
             </div>
 
         </section>
@@ -133,11 +133,17 @@
                 <h2 class="section-title">Чем мы занимаемся</h2>
 
             <ul class="list">
-                <li class="item"><img src="./images/box1.jpg" alt="Вёрстка" width="370" />
+                <li class="item">
+                    <img src="./images/box1.jpg" alt="Вёрстка" width="370" />
+                    <p>Десктопные приложения</p>
                 </li>
-                <li class="item"><img src="./images/box2.jpg" alt="Адаптивная вёрстка" width="370" />
+                <li class="item">
+                    <img src="./images/box2.jpg" alt="Адаптивная вёрстка" width="370" />
+                    <p>Мобильные приложения</p>
                 </li>
-                <li class="item"><img src="./images/box3.jpg" alt="Дизайн" width="370" />
+                <li class="item">
+                    <img src="./images/box3.jpg" alt="Дизайн" width="370" />
+                    <p>Дизайнерские решения</p>
                 </li>
             </ul>
             </div>
@@ -449,5 +455,14 @@
         </div>
 
     </footer>
+
+    <!-- Модальное окно -->
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <button class="close-button" type="button" data-modal-close></button>
+        </div>
+    </div>
+
+    <script src="./js/modal.js"></script>
 </body>
 </html>

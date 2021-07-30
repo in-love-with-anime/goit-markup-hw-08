@@ -142,7 +142,24 @@ img {
 }
 
 .nav-list a.current {
+    position: relative;
     color: var(--accent-color);
+}
+
+.nav-list a.current::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+
+    height: 2px;
+    width: 100%;
+
+    background-color: var(--accent-color);
+    border-radius: 2px;
+
+    transform: translateX(-50%);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1) all;
 }
 
 .contacts a {
@@ -159,7 +176,7 @@ img {
 
 .icon-mail {
     margin-right: 10px;
-    fill: currentcolor;
+    fill: currentColor;
 }
 
 .icon-mail:hover, .icon-mail:focus {
@@ -168,7 +185,7 @@ img {
 
 .icon-phone {
     margin-right: 10px;
-    fill: currentcolor;
+    fill: currentColor;
 }
 
 .icon-phone:hover, .icon-mail:focus {
@@ -302,6 +319,7 @@ img {
 
 .what-we-do .list {
     display: flex;
+    position: relative;
 }
   
 .what-we-do .item:not(:last-child) {
@@ -312,9 +330,31 @@ img {
     width: 370px;
 }
 
+.what-we-do p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    width: 370px;
+    height: 70px;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    color: var(--third-color);
+    background-color: rgba(47, 48, 58, 0.8);
+}
+
 /* Наша команда */
 .team.section {
     background-color: var(--secondary-bg-color);
+   
 }
 
 .team .list {
@@ -575,9 +615,29 @@ img {
 
 /* Проекты */
 
-.portfolio img {
+/* .portfolio img {
+    position: relative;
     width: 370px;
 }
+
+.portfolio img::before {
+    display: inline-block;
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(33, 150, 243, 0.9);
+
+    opacity: 0;
+} 
+
+.portfolio img:hover::before {
+    opacity: 1;
+} */
 
 .projects a {
     display: block;
@@ -613,4 +673,39 @@ img {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
                 0px 4px 4px rgba(0, 0, 0, 0.06),
                 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+
+/* МОДАЛЬНОЕ ОКНО */
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    min-width: 528px;
+    min-height: 581px;
+
+    background-color: var(--primary-bg-color);
+}
+
+.close-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
 }
