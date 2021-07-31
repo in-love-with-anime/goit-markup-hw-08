@@ -135,6 +135,10 @@ img {
 
     color: var(--primary-text-color);
     text-decoration: none;
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-list a:hover, .nav-list a:focus {
@@ -149,17 +153,14 @@ img {
 .nav-list a.current::after {
     content: '';
     position: absolute;
-    left: 50%;
+    left: 0;
     bottom: 0;
 
-    height: 2px;
+    height: 4px;
     width: 100%;
 
     background-color: var(--accent-color);
     border-radius: 2px;
-
-    transform: translateX(-50%);
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1) all;
 }
 
 .contacts a {
@@ -168,6 +169,10 @@ img {
     
     color: var(--secondary-text-color);
     text-decoration: none;
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts a:hover, .contacts a:focus {
@@ -239,6 +244,10 @@ img {
 
     border: 0;
     border-radius: 4px;
+
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-button:hover, .hero-button:focus {
@@ -414,6 +423,10 @@ img {
     fill: var(--icons-color);
     background-color: var(--primary-bg-color);
     border-radius: 50%;
+
+    transition-property: background-color, fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-social .link:hover, .team-social .link:focus {
@@ -444,12 +457,18 @@ img {
     cursor: pointer;
     border: 1px solid var(--regular-clients-border);
     border-radius: 4px;
+
+    transition-property: border-color, fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .regular-clients-item .link:hover, .regular-clients-item .link:focus {
     fill: var(--accent-color);
     border-color: var(--accent-color);
 }
+
+
 /* Подвал сайта */
 .footer {
     background-color: var(--footer-bg-color);
@@ -510,6 +529,10 @@ img {
     
     color: var(--footer-link);
     text-decoration: none;
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-contacts a:hover, .footer-contacts a:focus {
@@ -551,6 +574,10 @@ img {
     fill: var(--third-color);
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
+
+    transition-property: background-color, fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social .link:hover, .social .link:focus {
@@ -587,6 +614,10 @@ img {
     font-size: 16px;
     line-height: 1.62;
     text-align: center;
+
+    transition-property: background-color, color, box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filters button:hover, .filters button:focus {
@@ -613,11 +644,13 @@ img {
     margin-top: var(--card-set-gap);
 }
 
+
 /* Наложение  */
 
 .overlay {
     position: relative;
     width: 370px;
+    overflow: hidden;
 }
 
 .overlay::before {
@@ -629,24 +662,25 @@ img {
 
     background-color: rgba(33, 150, 243, 0.9);
 
-    opacity: 0;
+    transform: translateY(100%);
+    transition-property: transform, background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
 } 
 
-.overlay:hover::before {
-    opacity: 1;
-}
-
-.overlay:hover .label-text {
-    opacity: 1;
+.overlay:hover::before, .overlay:focus::before {
+    transform: translateY(0);
 }
 
 .label-text {
     position: absolute;
-    top: 63px;
-    left: 34px;
+    top: 0;
+    left: 0;
     
     display: inline-flex;
     margin: 0;
+    padding: 63px 24px;
 
     color: var(--third-color);
 
@@ -654,14 +688,27 @@ img {
     line-height: 1.55;
     letter-spacing: 0.03em;
 
-    opacity: 0;
+    transform: translateY(100%);
+    
+    transition-property: transform, color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }  
+
+.overlay:hover .label-text, .overlay:focus .label-text {
+    transform: translateY(0);
+    
+}
 
 /* Оформление карточек */
 
 .projects a {
     display: block;
     text-decoration: none; 
+
+    transition-property: box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-content {
@@ -705,6 +752,11 @@ img {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
+
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
@@ -713,20 +765,51 @@ img {
     pointer-events: none;
 }
 
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0.7);
+}
+
 .modal {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
 
     min-width: 528px;
     min-height: 581px;
 
     background-color: var(--primary-bg-color);
+
+    transition-property: transform;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-button {
     position: absolute;
     top: 8px;
     right: 8px;
+
+    height: 30px;
+    width: 30px;
+
+    display: flex;
+    align-items: center;
+
+    background-color: var(--bg-color);
+
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+
+    cursor: pointer;
 }
+
+.icon-close {
+    fill: var(--logo-color);
+}
+
+.icon-close:hover, .icon-close:focus {
+    fill: var(--accent-color);
+}
+
+    
