@@ -646,7 +646,6 @@ img {
 
 
 /* Наложение  */
-
 .overlay {
     position: relative;
     width: 370px;
@@ -665,8 +664,7 @@ img {
     transform: translateY(100%);
     transition-property: transform, background-color;
     transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);  
 } 
 
 .overlay:hover::before, .overlay:focus::before {
@@ -696,8 +694,15 @@ img {
 }  
 
 .overlay:hover .label-text, .overlay:focus .label-text {
+    transform: translateY(0);  
+}
+
+.card:hover .overlay::before {
     transform: translateY(0);
-    
+}
+
+.card:hover .label-text {
+    transform: translateY(0);
 }
 
 /* Оформление карточек */
@@ -760,7 +765,6 @@ img {
 }
 
 .backdrop.is-hidden {
-    visibility: hidden;
     opacity: 0;
     pointer-events: none;
 }
