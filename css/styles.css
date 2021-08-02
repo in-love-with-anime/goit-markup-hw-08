@@ -177,6 +177,7 @@ img {
 
 .contacts a:hover, .contacts a:focus {
     color: var(--accent-color);
+    outline: none;
 }
 
 .icon-mail {
@@ -253,6 +254,7 @@ img {
 .hero-button:hover, .hero-button:focus {
     background-color: var(--accent-hero-button);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    outline: none;
 }
 
 /* Секции */
@@ -432,6 +434,7 @@ img {
 .team-social .link:hover, .team-social .link:focus {
     fill: var(--third-color);
     background-color: var(--accent-color);
+    outline: none;
 }
 
 /* Постоянные клиенты */
@@ -468,6 +471,9 @@ img {
     border-color: var(--accent-color);
 }
 
+.regular-clients-item .link:focus {
+    outline: none;
+  }
 
 /* Подвал сайта */
 .footer {
@@ -537,6 +543,7 @@ img {
 
 .footer-contacts a:hover, .footer-contacts a:focus {
     color: var(--accent-color);
+    outline: none;
 }
 
 /* Ссылки на соцсете в футере */
@@ -582,6 +589,7 @@ img {
 
 .social .link:hover, .social .link:focus {
     background-color: var(--accent-color);
+    outline: none;
 }
 
 .social li:not(:last-child) {
@@ -621,6 +629,7 @@ img {
 }
 
 .filters button:hover, .filters button:focus {
+    outline: none;
     background-color: var(--accent-color);
     color: var(--third-color);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
@@ -742,6 +751,7 @@ img {
 }
 
 .projects a:hover, .projects a:focus {
+    outline: none;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
                 0px 4px 4px rgba(0, 0, 0, 0.06),
                 1px 4px 6px rgba(0, 0, 0, 0.16);
