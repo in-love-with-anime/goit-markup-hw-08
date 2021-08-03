@@ -154,7 +154,7 @@ img {
     content: '';
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -1px;
 
     height: 4px;
     width: 100%;
@@ -550,10 +550,12 @@ img {
 .social-links {
     display: flex;
     flex-direction: column;
+
+    margin-right: 93px;
     
 }
 
-.join {
+.join-text {
     display: block;
     margin-bottom: 20px;
 
@@ -596,6 +598,86 @@ img {
     margin-right: 10px;
 }
 
+/* Форма подписки */
+
+.subscription {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.subscription form {
+    display: flex;
+    margin-right: auto;
+}
+
+.subscribe-text {
+    display: block;
+    margin-bottom: 20px;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.17;
+    text-transform: uppercase;
+
+    color: var(--third-color);
+}
+
+.enter-mail {
+    margin-right: 12px;
+    padding: 15px 150px 15px 16px;
+
+    background-color: transparent;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+}
+
+.enter-mail {
+    outline: none;
+}
+
+.enter-mail::placeholder {
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: 0.03em;
+
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.subscribe-button {
+    position: relative;
+    padding: 10px 62px 10px 29px;
+
+    background-color: var(--accent-color);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+
+    color: var(--third-color);
+
+    border: 0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+}
+
+.subscribe-button:focus {
+    outline: none;
+}
+
+.subscribe-button::after {
+    position: absolute;
+    top: 13px;
+    right: 28px;
+    content: '';
+    width: 24px;
+    height: 24px;
+    
+    background-image: url('../images/plane.svg');
+}
 
 /* ПОРТФОЛИО */
 
@@ -683,9 +765,7 @@ img {
 .label-text {
     position: absolute;
     top: 0;
-    left: 0;
     
-    display: inline-flex;
     margin: 0;
     padding: 63px 24px;
 
