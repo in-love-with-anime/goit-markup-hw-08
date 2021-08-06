@@ -620,6 +620,7 @@ img {
     padding: 15px 150px 15px 16px;
     width: 358px;
 
+    color: var(--third-color);
     background-color: transparent;
 
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -887,7 +888,7 @@ img {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.icon-close:hover, .icon-close:focus {
+.close-button:hover .icon-close, .close-button:focus .icon-close {
     fill: var(--accent-color);
 }
 
