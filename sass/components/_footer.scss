@@ -1,0 +1,153 @@
+.footer {
+    background-color: $footer-bg-color;
+}
+
+.footer__container {
+    display: flex;
+    align-items: baseline;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.footer__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 231px;
+    margin-right: 70px;
+}
+
+.footer__logo {
+    display: inline-block;
+    padding: 0;
+    margin-bottom: 20px;
+
+    color: $third-color;
+}
+
+//Адрес 
+.address {
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.71;
+}
+
+.address__text {
+    margin-top: 0;
+    margin-bottom: 9px;
+    color: $third-color;
+}
+
+.address__item:not(:last-child) {
+    margin-bottom: 9px;  
+}
+
+.address__link {
+    display: block;
+    
+    color: $footer-link;
+    text-decoration: none;
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover, &:focus {
+        color: $accent-color;
+    }
+}
+
+// Ссылки на соцсете в футере 
+.socials {
+    display: flex;
+    flex-direction: column;
+
+    margin-right: 93px;  
+}
+
+.socials__slogan {
+    display: block;
+    margin-bottom: 20px;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.17;
+    text-transform: uppercase;
+
+    color: $third-color;
+}
+
+.socials__link--color { 
+    fill: $third-color;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+// Форма подписки 
+
+.sub {
+    display: flex;
+    flex-direction: column;
+}
+
+.sub__slogan {
+    display: block;
+    margin-bottom: 20px;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.17;
+    text-transform: uppercase;
+
+    color: $third-color;
+}
+
+.sub__form {
+    display: flex;
+}
+
+.sub__input {
+    margin-right: 12px;
+    padding: 15px 150px 15px 16px;
+    width: 358px;
+
+    color: $third-color;
+    background-color: transparent;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+
+    &::placeholder {
+        font-size: 16px;
+        line-height: 1.25;
+        letter-spacing: 0.03em;
+
+        color: rgba(255, 255, 255, 0.6);
+    }
+}
+
+.sub__button {
+    position: relative;
+    padding: 10px 62px 10px 29px;
+    width: 200px;
+
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+
+    background-color: $accent-color;
+    color: $third-color;
+
+    cursor: pointer;    
+    border: 0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+}
+
+.sub__icon {
+    position: absolute;
+    top: 13px;
+    right: 28px;
+}
