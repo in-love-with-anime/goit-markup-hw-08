@@ -88,7 +88,7 @@
     color: $primary-text-color;
     font-size: 18px;
     line-height: 2;
-    letter-spacing: 0.06em;
+    letter-spacing: $secondary-letter-spacing;
 }
 
 .product__type {
@@ -143,7 +143,6 @@
 
     font-size: 18px;
     line-height: 1.55;
-    letter-spacing: 0.03em;
 
     transform: translateY(100%);
     
@@ -160,9 +159,3 @@
     }
     
 }  
-
-
-
-
-
-

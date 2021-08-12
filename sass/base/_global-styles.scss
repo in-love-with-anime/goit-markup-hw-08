@@ -10,8 +10,8 @@ html {
 
 body {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
-    letter-spacing: 0.03em;
+    font-family: $primary-font-family;
+    letter-spacing: $primary-letter-spacing;
 
     color: $primary-text-color;
     background-color: $primary-bg-color;

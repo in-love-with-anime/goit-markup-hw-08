@@ -120,7 +120,6 @@
     &::placeholder {
         font-size: 16px;
         line-height: 1.25;
-        letter-spacing: 0.03em;
 
         color: rgba(255, 255, 255, 0.6);
     }
@@ -135,7 +134,7 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 1.88;
-    letter-spacing: 0.06em;
+    letter-spacing: $secondary-letter-spacing;
 
     background-color: $accent-color;
     color: $third-color;

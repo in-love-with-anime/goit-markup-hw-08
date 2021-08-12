@@ -67,11 +67,11 @@ img {
   overflow: hidden;
 }
 
-.header__border {
+.header {
   border-bottom: 1px solid #ececec;
 }
 
-.header {
+.header__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -108,7 +108,7 @@ img {
           align-items: center;
 }
 
-.main-nav__list, .header-contacts__list {
+.main-nav__list, .header__contact-link {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -318,12 +318,12 @@ img {
   position: relative;
 }
 
-.what-we-do__item:not(:last-child) {
-  margin-right: 30px;
-}
-
 .what-we-do__item {
   width: 370px;
+}
+
+.what-we-do__item:not(:last-child) {
+  margin-right: 30px;
 }
 
 .what-we-do__label {
@@ -361,16 +361,16 @@ img {
   text-align: center;
 }
 
-.team__item:not(:last-child) {
-  margin-right: 30px;
-}
-
 .team__item {
   width: 270px;
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.team__item:not(:last-child) {
+  margin-right: 30px;
 }
 
 .team__wrapper {
@@ -477,7 +477,7 @@ img {
   background-color: #2f303a;
 }
 
-.footer .container {
+.footer__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -815,33 +815,33 @@ img {
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.request-form__comment:focus {
+.request-form__comment :focus {
   border-color: #2196f3;
   outline: none;
 }
 
-.request-form__comment::-webkit-input-placeholder {
+.request-form__comment ::-webkit-input-placeholder {
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
 }
 
-.request-form__comment:-ms-input-placeholder {
+.request-form__comment :-ms-input-placeholder {
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
 }
 
-.request-form__comment::-ms-input-placeholder {
+.request-form__comment ::-ms-input-placeholder {
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
 }
 
-.request-form__comment::placeholder {
+.request-form__comment ::placeholder {
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.01em;
@@ -1052,6 +1052,11 @@ img {
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.product:hover .product__overlay::before {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
 .product__overlay:hover::before, .product__overlay:focus::before {
   -webkit-transform: translateY(0);
           transform: translateY(0);
@@ -1078,17 +1083,12 @@ img {
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.product__overlay:hover .product__label, .product__overlay:focus .product__label {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-}
-
-.product:hover .product__overlay::before {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-}
-
 .product:hover .product__label {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.product__overlay:hover .product__label, .product__overlay:focus .product__label {
   -webkit-transform: translateY(0);
           transform: translateY(0);
 }
