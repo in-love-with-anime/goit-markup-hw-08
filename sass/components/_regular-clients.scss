@@ -21,12 +21,10 @@
     border: 1px solid $regular-clients-border;
     border-radius: 4px;
 
-    transition-property: border-color, fill;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    @include transition2 (border-color, fill);
 
     &:hover, &:focus {
         fill: $accent-color;
         border-color: $accent-color;
-    }
+    }    
 }

@@ -13,7 +13,7 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   letter-spacing: 0.03em;
   color: #212121;
   background-color: #ffffff;
@@ -81,7 +81,7 @@ img {
 }
 
 .logo {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 26px;
   line-height: 1.19;
   text-decoration: none;
@@ -239,8 +239,10 @@ img {
   cursor: pointer;
   border: 0;
   border-radius: 4px;
-  -webkit-transition-property: background-color;
-  transition-property: background-color;
+  -webkit-transition-property: background-color, -webkit-box-shadow;
+  transition-property: background-color, -webkit-box-shadow;
+  transition-property: background-color, box-shadow;
+  transition-property: background-color, box-shadow, -webkit-box-shadow;
   -webkit-transition-duration: 250ms;
           transition-duration: 250ms;
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -344,7 +346,6 @@ img {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
-  letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #ffffff;
   background-color: rgba(47, 48, 58, 0.8);
@@ -608,28 +609,24 @@ img {
 .sub__input::-webkit-input-placeholder {
   font-size: 16px;
   line-height: 1.25;
-  letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
 }
 
 .sub__input:-ms-input-placeholder {
   font-size: 16px;
   line-height: 1.25;
-  letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
 }
 
 .sub__input::-ms-input-placeholder {
   font-size: 16px;
   line-height: 1.25;
-  letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
 }
 
 .sub__input::placeholder {
   font-size: 16px;
   line-height: 1.25;
-  letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
 }
 
@@ -815,7 +812,7 @@ img {
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.request-form__comment :focus {
+.request-form__comment:focus {
   border-color: #2196f3;
   outline: none;
 }
@@ -1070,7 +1067,6 @@ img {
   color: #ffffff;
   font-size: 18px;
   line-height: 1.55;
-  letter-spacing: 0.03em;
   -webkit-transform: translateY(100%);
           transform: translateY(100%);
   -webkit-transition-property: color, -webkit-transform;

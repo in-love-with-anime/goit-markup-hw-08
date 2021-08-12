@@ -1,6 +1,7 @@
 @import './utils/variables';
-@import './utils/global-styles';
+@import './base/global-styles';
 @import './utils/visually-hidden';
+@import './utils/mixin';
 @import './components/header';
 @import './components/hero';
 @import './components/features';
