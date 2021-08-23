@@ -2,8 +2,22 @@
 
 .filters {
     display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+
+    @media screen and (min-width: 768px) {
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    }
+    @media screen and (min-width: 1200px) {
+        margin-bottom: 50px;
+        }
+}
+
+@media screen and (max-width: 767px) {
+    .filters__item:nth-child(-n + 3) {
+        margin-bottom: 15px;
+    }
 }
 
 .filters__item:not(:last-child) {
@@ -40,16 +54,21 @@
 // Сетка карточек 
 
 .card-set {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: calc(-1 * #{$card-set-gap});
-    margin-top: calc(-1 * #{$card-set-gap});
+    @media screen and (min-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        grid-template-columns: repeat(3, 1fr)
+    }    
 }
 
 .card-set__item {
-    flex-basis: calc(100% / 3 - 3 * #{$card-set-gap});
-    margin-left: $card-set-gap;
-    margin-top: $card-set-gap;
+    @media screen and (max-width: 767px) {
+        margin-bottom: 30px;
+    }
 }
 
 // Оформление карточек 
@@ -67,14 +86,21 @@
     }
 }
 
-
+.product__img {
+    width: 100vw;
+}
 
 .product__meta {
     padding: 20px 24px;
     border-right: 1px solid $portfolio-border;
     border-bottom: 1px solid $portfolio-border;
     border-left: 1px solid $portfolio-border;
-    
+
+    &--second {
+        @media screen and (min-width: 768px ) and (max-width: 1199px ) {
+            padding: 20px 15px;
+        }
+    }
 }
 
 .product__title {
@@ -101,7 +127,7 @@
 
 .product__overlay {
     position: relative;
-    width: 370px;
+    width: 100%;
     overflow: hidden;
 }
 
@@ -118,7 +144,7 @@
 
     @include transition2 (transform, background-color);
     
-    .product:hover & {
+    .product:hover &, .product:focus & {
         transform: translateY(0);
     }
 } 
@@ -143,7 +169,7 @@
     
     @include transition2 (transform, color);
 
-    .product:hover & {
+    .product:hover &, .product:focus &{
         transform: translateY(0);
     }
 
