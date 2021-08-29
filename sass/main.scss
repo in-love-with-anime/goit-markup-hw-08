@@ -1,8 +1,10 @@
 @import './utils/variables';
 @import './utils/breakpoints';
-@import './base/global-styles';
 @import './utils/visually-hidden';
 @import './utils/mixin';
+
+@import './base/global-styles';
+
 @import './components/header';
 @import './components/hero';
 @import './components/features';
