@@ -125,7 +125,6 @@
     flex-direction: column;
 
     @media screen and (min-width: $tablet) {
-        display: flex;
         flex-direction: row;
         align-items: center;
         margin-right: 83px;

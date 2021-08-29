@@ -76,6 +76,7 @@
 
 .card-set__link {
     display: block;
+    height: 100%;
     text-decoration: none; 
     
     @include transition1 (box-shadow);
@@ -92,18 +93,20 @@
     height: 294px;
 }
 
+.product {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .product__meta {
     padding: 20px 24px;
     border-right: 1px solid $portfolio-border;
     border-bottom: 1px solid $portfolio-border;
-    border-left: 1px solid $portfolio-border;  
+    border-left: 1px solid $portfolio-border;
+    flex-grow: 1;  
 }
 
-@media screen and (min-width: 768px) and (max-width: 1199px) {
-    .product__meta--padding {
-        padding-bottom: 56px;
-    }
-}
 
 .product__title {
     margin-top: 0;
